@@ -1,0 +1,21 @@
+import { TDictionaryItem } from "../types"
+export const q_arr: TDictionaryItem[] = [
+  { key: "quaint", value: "причудливый" },
+  { key: "quality", value: "качество, качественный" },
+  { key: "quantity", value: "количество" },
+  { key: "quarrel", value: "ссора" },
+  { key: "quarry", value: "карьер" },
+  { key: "quarter", value: "четверть" },
+  { key: "queer", value: "странный, чудной" },
+  { key: "query", value: "запрос" },
+  { key: "quest", value: "поиск" },
+  { key: "question", value: "подвергать сомнению" },
+  { key: "questionnaire", value: "анкета" },
+  { key: "queue", value: "очередь" },
+  { key: "quiet", value: "тихий, спокойный, тишина" },
+  { key: "quilt", value: "одеяло (стёганное)" },
+  { key: "quit (quit, quit)", value: "бросить, покинуть, перестать" },
+  { key: "quite", value: "вполне или более-менее" },
+  { key: "quiz", value: "викторина, тест, опрос" },
+  { key: "quote", value: "цитировать" },
+]
