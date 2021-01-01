@@ -1,2 +1,2 @@
 export * from "./dictionary-item"
-export * from "./result-item"
+export * from "./quiz.response"

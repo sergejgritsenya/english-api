@@ -1,5 +1,5 @@
 import { let_arr } from "../objects"
-import { TResultItem } from "../types"
+import { TQuiz } from "../types"
 
 const getSample = (samples: number[]): number => {
   let sample = Math.floor(Math.random() * let_arr.length)
@@ -17,24 +17,24 @@ const getAnswers = (sample: number): number[] => {
   return [sample, ...wrongs].sort()
 }
 
-export const chooseWords = (size: number): TResultItem[] => {
+export const chooseWords = (size: number): TQuiz => {
   const samples: number[] = []
   for (let i = 0; i < size; i++) {
     const sample = getSample(samples)
     samples.push(sample)
   }
   return samples.map((sample) => {
-    const answers = getAnswers(sample)
-    const values = answers.map((answ) => {
+    const values = getAnswers(sample)
+    const answers = values.map((answ) => {
       const value = let_arr[answ].value
       return {
-        value: Array.isArray(value) ? value.join(", ") : value,
+        answer: Array.isArray(value) ? value.join(", ") : value,
         is_correct: answ === sample,
       }
     })
     return {
-      key: let_arr[sample].key,
-      values,
+      question: let_arr[sample].key,
+      answers,
     }
   })
 }
