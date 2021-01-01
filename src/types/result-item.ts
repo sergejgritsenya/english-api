@@ -1,6 +1,6 @@
 export type TResultItemValue = {
   value: string | string[]
-  is_right: boolean
+  is_correct: boolean
 }
 
 export type TResultItem = {

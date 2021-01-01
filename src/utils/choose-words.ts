@@ -29,7 +29,7 @@ export const chooseWords = (size: number): TResultItem[] => {
       const value = let_arr[answ].value
       return {
         value: Array.isArray(value) ? value.join(", ") : value,
-        is_right: answ === sample,
+        is_correct: answ === sample,
       }
     })
     return {
