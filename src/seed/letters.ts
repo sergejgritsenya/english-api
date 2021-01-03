@@ -22,7 +22,7 @@ export const letters = [
   "u",
   "v",
   "w",
-  // "x",
+  "x",
   "y",
   "z",
 ]

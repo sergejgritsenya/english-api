@@ -1,40 +1,25 @@
-import { let_arr } from "../objects"
-import { TQuiz } from "../types"
+import { dictionary } from "../dictionary"
+import { TAnswerItem, TQuiz, TSettings } from "../types"
+import { getIndeces } from "./get-indeces"
+import { isReverse } from "./is-reverse"
 
-const getSample = (samples: number[]): number => {
-  let sample = Math.floor(Math.random() * let_arr.length)
-  if (samples.some((item) => item === sample)) {
-    sample = getSample(samples)
-  }
-  return sample
+const getAnswers = (index: number, is_reverse: boolean): TAnswerItem[] => {
+  const indeces = getIndeces(3, dictionary.length, [index])
+
+  return indeces.sort().map((idx) => ({
+    answer: is_reverse ? dictionary[idx].english : dictionary[idx].russian,
+    is_correct: idx === index,
+  }))
 }
 
-const getAnswers = (sample: number): number[] => {
-  const wrongs: number[] = []
-  for (let i = 0; i < 3; i++) {
-    wrongs.push(getSample([sample, ...wrongs]))
-  }
-  return [sample, ...wrongs].sort()
-}
+export const chooseWords = (settings: TSettings): TQuiz => {
+  const indeces = getIndeces(settings.size, dictionary.length)
 
-export const chooseWords = (size: number): TQuiz => {
-  const samples: number[] = []
-  for (let i = 0; i < size; i++) {
-    const sample = getSample(samples)
-    samples.push(sample)
-  }
-  return samples.map((sample) => {
-    const values = getAnswers(sample)
-    const answers = values.map((answ) => {
-      const value = let_arr[answ].value
-      return {
-        answer: Array.isArray(value) ? value.join(", ") : value,
-        is_correct: answ === sample,
-      }
-    })
+  return indeces.map((index) => {
+    const is_reverse = isReverse(settings.language)
     return {
-      question: let_arr[sample].key,
-      answers,
+      question: is_reverse ? dictionary[index].russian : dictionary[index].english,
+      answers: getAnswers(index, is_reverse),
     }
   })
 }

@@ -1,4 +1,4 @@
 export type TDictionaryItem = {
-  key: string
-  value: string | string[]
+  english: string
+  russian: string
 }

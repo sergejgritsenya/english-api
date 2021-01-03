@@ -1,4 +1,4 @@
-type TAnswerItem = {
+export type TAnswerItem = {
   answer: string | string[]
   is_correct: boolean
 }
