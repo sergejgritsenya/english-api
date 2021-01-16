@@ -36,7 +36,7 @@ docker build -t english-back .
 
 ## Front
 
-docker build -t english-back .
+docker build -t english-front .
 
 # Run containers
 
