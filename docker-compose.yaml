@@ -1,0 +1,16 @@
+version: "3.7"
+
+services:
+  # BACK
+  english-back:
+    image: english-back
+    restart: always
+    ports:
+      - 4000:4000
+  # FRONT
+  english-front:
+    image: english-front
+    # build: ../english-front
+    restart: always
+    ports:
+      - 3000:80
