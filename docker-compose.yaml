@@ -1,17 +1,15 @@
 version: "3.7"
 
 services:
-  # BACK
-  english-back:
-    image: english-back
+  # API
+  english-api:
+    image: english-api
     restart: always
     ports:
       - 4000:4000
-  # FRONT
-  english-front:
-    image: english-front
+  # WEB
+  english-web:
+    image: english-web
     restart: always
     ports:
       - 80:80
-    environment:
-      REACT_APP_PUBLIC_URL: "http://localhost:4000"
