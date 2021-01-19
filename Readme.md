@@ -32,11 +32,11 @@ sudo chmod +x /usr/local/bin/docker-compose
 
 ## Back
 
-docker build -t english-back .
+docker build -t english-api .
 
 ## Front
 
-docker build -t english-front .
+docker build -t english-web .
 
 # Run containers
 
