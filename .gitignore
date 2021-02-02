@@ -9,6 +9,7 @@ stats/*
 stats.json
 old/*
 docker-compose.yml
+docker-compose.yaml
 prisma/migrations/*
 **/tsconfig.tsbuildinfo
 
