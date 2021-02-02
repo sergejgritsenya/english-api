@@ -7,6 +7,8 @@ services:
     restart: always
     ports:
       - 4000:4000
+    environment:
+      COLLECTOR_URL: http://18.212.213.136:8585/collect
   # WEB
   english-web:
     image: english-web
